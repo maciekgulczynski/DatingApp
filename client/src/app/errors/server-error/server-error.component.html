@@ -1,0 +1,14 @@
+<h4>Internal server error - refresing the page will mae error disappear</h4>
+<ng-container *ngIf="error">
+    <h5 class="text-danger"> Error: {{error.message}}</h5>
+    <p class="font-weight-bold">Note: Angular not to blame</p>
+    <p>What to do next?</p>
+    <ol>
+        <li>Open chrome dev tool! and go to netword</li>
+        <li>Examine the request URL - what API endpoint are you requesting</li>
+        <li>Reproduce in postman</li>
+    </ol>
+    <p style = "font-weight: bold;"> Follow the stack trace - the first few lines will tell you the code line</p>
+    <code class="mt-5" style="background-color: whitesmoke;">
+    {{error.details}}</code>
+</ng-container>
