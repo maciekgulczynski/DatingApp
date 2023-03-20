@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ErrorsInterceptor } from 'src/app/_interceptpr/errors.interceptor';
+import { ErrorsInterceptor } from 'src/app/_interceptors/errors.interceptor';
 
 @Component({
   selector: 'app-server-error',
