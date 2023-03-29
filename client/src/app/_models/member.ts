@@ -10,8 +10,9 @@ import { Photo } from "./photo";
         lastActive: Date;
         gender: string;
         introduction: string;
-        interest?: any;
+        interests?: any;
         city: string;
         country: string;
         photos: Photo[];
+        lookingFor: string;
     }
