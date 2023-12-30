@@ -35,6 +35,22 @@ namespace API.Extensions
                     ValidateIssuer = false,
                     ValidateAudience = false
                 };
+
+                options.Events = new JwtBearerEvents 
+                {
+                    OnMessageReceived = context =>
+                    {
+                        var accessoToken = context.Request.Query["access_token"];
+
+                        var path = context.HttpContext.Request.Path;
+                        if(string.IsNullOrEmpty(accessoToken) && path.StartsWithSegments("/hubs"))
+                        {
+                            context.Token = accessoToken;
+                        }
+
+                        return Task.CompletedTask;
+                    }
+                };
             });
 
             services.AddAuthorization(opt => 
